@@ -5,7 +5,7 @@ using UnityEngine;
 public class EntityShoot : MonoBehaviour
 {
 
-    [SerializeField] int[] shootIntervalRandom = { 1, 4};
+    public float[] shootIntervalRandom = {0.3f, 3f};
     public bool canShoot = false;
 
     public GameObject bulletPrefab;

@@ -15,5 +15,6 @@ MonoBehaviour:
   obstaclePrefab: {fileID: 8058476580583013329, guid: e1466ae718c7f4d708ac273cc0245c01, type: 3}
   movementSpeed: 6
   damageValue: 5
-  numberOfObstacles: 10
+  numberOfObstacles: 4
+  canEnemyShoot: 1
   spawnInterval: 3

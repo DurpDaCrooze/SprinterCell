@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: wave2
   m_EditorClassIdentifier: Assembly-CSharp::newWave
   obstaclePrefab: {fileID: 8058476580583013329, guid: e1466ae718c7f4d708ac273cc0245c01, type: 3}
-  movementSpeed: 6
-  damageValue: 5
-  numberOfObstacles: 10
-  spawnInterval: 3
+  movementSpeed: 12
+  damageValue: 100
+  numberOfObstacles: 5
+  canEnemyShoot: 0
+  spawnInterval: 2

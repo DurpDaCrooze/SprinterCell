@@ -104,5 +104,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea05b6353174483796090e3f650865a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GeneralEntityMovement
-  speed: 8
+  speed: 14
   destroyObjectPadding: 0.3

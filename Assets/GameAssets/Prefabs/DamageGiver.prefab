@@ -236,6 +236,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ec51a1b775fd46fa9fa4871e7299ca8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EntityShoot
-  shootIntervalRandom: 0100000004000000
+  shootIntervalRandom:
+  - 0.3
+  - 3
   canShoot: 0
   bulletPrefab: {fileID: 7943462603765072287, guid: 7e55a5a52cdf04e2abb775eb72a0c4e9, type: 3}

@@ -269,6 +269,7 @@ MonoBehaviour:
   pointGiverPrefab: {fileID: 3728477084571061714, guid: 33a2ce38b6cf34b688865a47b44d6194, type: 3}
   allWaves:
   - {fileID: 11400000, guid: d2666cf1c7a25455cb8d944685bfa68c, type: 2}
+  - {fileID: 11400000, guid: c1bf8dbb340dc4bd9b81c20c67832ce8, type: 2}
   paths:
   - {fileID: 62090795}
   - {fileID: 1866305195}
