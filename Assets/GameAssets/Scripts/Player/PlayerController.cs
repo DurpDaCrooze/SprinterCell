@@ -17,11 +17,15 @@ public class PlayerController : MonoBehaviour
     private float maxCap = 0;
     [SerializeField] private statsTracker stats;
     
+
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
     }
+    
+
     
     void Awake()
     {

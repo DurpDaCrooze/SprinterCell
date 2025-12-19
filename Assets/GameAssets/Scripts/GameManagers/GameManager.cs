@@ -28,14 +28,21 @@ public class GameManager : MonoBehaviour
     //technical adjustments
     public float destroyObjectOutOfBoundsPadding = 5f;
     
+    //audio
+    public AudioClip backgroundMusic;
+    private AudioSource source;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         initVars();
         StartCoroutine(spawnPointGiversChron());
         StartCoroutine(startAllWaves());
+        playBackgroundMusic();
     }
 
+    
+    
     void initVars()
     {
         pointGiverSpawnerPos = GameObject.Find("PointGiverSpawner").GetComponent<Transform>(); //link pointGiverSpawner gameObj
@@ -84,6 +91,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    void playBackgroundMusic()
+    {
+        source = gameObject.AddComponent<AudioSource>();
+        source.clip = backgroundMusic;
+        source.loop = true;
+        source.playOnAwake = true;
+        source.Play();
+    }
+    
     public List<Transform> getRandomPathPoints() //Path parse function (Turns the transforms into a list)
     {
         print("parsing path points");
