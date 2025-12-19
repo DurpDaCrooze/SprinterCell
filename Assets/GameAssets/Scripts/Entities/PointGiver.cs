@@ -1,9 +1,10 @@
+using System;
+using UnityEditor.UI;
 using UnityEngine;
 
-public class DamageDealer : MonoBehaviour
+public class PointGiver : MonoBehaviour
 {
-
-    public int damageHandout;
+    public int pointHandout = 5;
     
     private GameManager gameManager;
     
@@ -30,14 +31,13 @@ public class DamageDealer : MonoBehaviour
         print("Collision");
         if(other.CompareTag("Player"))
         {
-            PlayerController player = other.GetComponent<PlayerController>();
-            dealDamage(player);
+            givePoints(pointHandout);
             Destroy(gameObject);
         }
     }
 
-    private void dealDamage(PlayerController player)
+    private void givePoints(int pointCount)
     {
-        player.playerHealth -= damageHandout;
+        gameManager.score += pointCount;
     }
 }

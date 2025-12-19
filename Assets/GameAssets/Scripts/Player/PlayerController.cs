@@ -5,9 +5,9 @@ public class PlayerController : MonoBehaviour
 {
     //public vars
     public float moveSpeed;
+    public float playerHealth = 100; 
     public float accelerationSpeed;
     public float edgePadding;
-
     //objects
     
     //private vars
