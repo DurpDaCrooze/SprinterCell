@@ -13,7 +13,7 @@ public class EntityShoot : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (canShoot) StartCoroutine(shootTimer());
+        if (canShoot) StartCoroutine(shootTimer()); //checking if the damage dealer bool is toggles so that shooting is enabled
     }
 
     // Update is called once per frame
@@ -22,14 +22,18 @@ public class EntityShoot : MonoBehaviour
         
     }
 
-    IEnumerator shootTimer()
+    IEnumerator shootTimer() //starting chron for randomized shoot events
     {
-        yield return new WaitForSeconds(Random.Range(shootIntervalRandom[0], shootIntervalRandom[1]));
-        shootBullet();
+        yield return new WaitForSeconds(Random.Range(shootIntervalRandom[0], shootIntervalRandom[1])); //await so enemy doesn't fire immedietly on spawn
+        
+        shootBullet(); //call shoot func
+        
+        StartCoroutine(shootTimer()); //calling self to loop shooting
     }
 
-    private void shootBullet()
+    private void shootBullet() //shoot func
     {
+        //instintiate bullet prefab at obstacle pos
         Instantiate(bulletPrefab, transform.position, Quaternion.identity);
     }
 }

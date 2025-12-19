@@ -25,14 +25,15 @@ public class PointGiverSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveSideToSide();
+        moveSideToSide(); //call func for movement
     }
 
+    //movement function
     private void moveSideToSide()
-    {
+    {   //flip flop switch for side to side movement
         if(transform.position.x >= maxCap) movedir = -1;
         if(transform.position.x <= minCap) movedir = 1;
         
-        transform.Translate(speed * Time.deltaTime * movedir, 0, 0);
+        transform.Translate(speed * Time.deltaTime * movedir, 0, 0); //apply movement
     }
 }

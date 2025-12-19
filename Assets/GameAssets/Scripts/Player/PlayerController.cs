@@ -37,17 +37,19 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //update sequence is [IMPORTANT], reminder to self to double check this in case of errors.
         float moveVector = calculateMovement(Input.GetAxisRaw( "Horizontal"));
         applyMovement(moveVector);
         clampMovementAtEdges();
     }
 
+    //clamp movement at edges for edge limits
     void clampMovementAtEdges()
     {
-        transform.position = new Vector2(Mathf.Clamp(transform.position.x, minCap, maxCap), transform.position.y);
+        transform.position = new Vector2(Mathf.Clamp(transform.position.x, minCap, maxCap), transform.position.y); 
     }
     
-    float calculateMovement(float direction)
+    float calculateMovement(float direction) //movement logic before translation
     {
         if (direction != 0)
         {
@@ -60,8 +62,9 @@ public class PlayerController : MonoBehaviour
         return (moveVal * Time.deltaTime * direction);
     }
 
+    //final transform translation
     void applyMovement(float moveVal)
     {
-        transform.Translate(moveVal, 0, 0);
+        transform.Translate(moveVal, 0, 0); //translate movement
     }
 }

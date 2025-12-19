@@ -27,7 +27,7 @@ public class DamageDealer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        print("Collision");
+        //check if collision is with player (via tag) (again)
         if(other.CompareTag("Player"))
         {
             PlayerController player = other.GetComponent<PlayerController>();
@@ -36,8 +36,9 @@ public class DamageDealer : MonoBehaviour
         }
     }
 
+    //output damage
     private void dealDamage(PlayerController player)
     {
-        player.playerHealth -= damageHandout;
+        player.playerHealth -= damageHandout; //subtract player health (calling gameManager obj here)
     }
 }

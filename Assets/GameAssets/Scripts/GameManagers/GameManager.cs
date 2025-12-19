@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     void initVars()
     {
-        pointGiverSpawnerPos = GameObject.Find("PointGiverSpawner").GetComponent<Transform>();
+        pointGiverSpawnerPos = GameObject.Find("PointGiverSpawner").GetComponent<Transform>(); //link pointGiverSpawner gameObj
     }
 
     // Update is called once per frame
@@ -46,23 +46,24 @@ public class GameManager : MonoBehaviour
         
     }
 
-    IEnumerator startAllWaves()
+    IEnumerator startAllWaves() //initiate all wavess
     {
+        //iterate through the waves
         foreach (newWave waves in allWaves)
         {
             yield return StartCoroutine(startWave(waves));
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(2f); //wait between waves
         }
 
-        StartCoroutine(startAllWaves());
+        StartCoroutine(startAllWaves()); //loop at the end for endless gameplay
     }
 
     IEnumerator startWave(newWave wave)
     {
         for (int i = 0; i < wave.numberOfObstacles; i++)
         {
-            //setup the path first
+            //setup the path first (call my parse func)
             Transform[] pathArray = getRandomPathPoints().ToArray();
             
             //get instance refs :>
@@ -78,11 +79,11 @@ public class GameManager : MonoBehaviour
             entityPathFollow.pathPoints = pathArray;
             entityShoot.canShoot = wave.canEnemyShoot;
             
-            yield return new WaitForSeconds(wave.spawnInterval);
+            yield return new WaitForSeconds(wave.spawnInterval); //wait a few seconds between spawns
         }
     }
 
-    public List<Transform> getRandomPathPoints()
+    public List<Transform> getRandomPathPoints() //Path parse function (Turns the transforms into a list)
     {
         print("parsing path points");
         List<Transform> pointList = new List<Transform>();
@@ -91,30 +92,28 @@ public class GameManager : MonoBehaviour
         
         print("Chose path: " + path.name);
         
-        pointList.Add(path.transform);
+        pointList.Add(path.transform); //add spawn pos (Parent Transform)
+        //iterate through all children and add them to list
         foreach (Transform point in path.transform)
         {
-            print("Adding point to list:" + point.position);
             pointList.Add(point);
-            print("Added point to list!");
         }
         
         return pointList;
     }
 
-    IEnumerator spawnPointGiversChron()
+    IEnumerator spawnPointGiversChron() //Timer (I call em chron jobs) to spawn point givers
     {
-        print("Coroutine started: spawnPointGiversChron");
+        //Iterate through spawn count to produce 10 as it says in the front sheet :o
         for (int i = 0; i < pgSpawnCount; i++)
         {
             yield return new WaitForSeconds(Random.Range(pgSpawnTimeRange[0], pgSpawnTimeRange[1]));
-            print("Spawning point giver: " + i);
             spawnObject(pointGiverPrefab, pointGiverSpawnerPos.position);
 
         }
     }
 
-    void spawnObject(GameObject obj, Vector2 pos)
+    void spawnObject(GameObject obj, Vector2 pos) //this is redundant, was going to add type safety for instantiations until I found out they natively return the object, but it's in my code now so it'll stay
     {
         Instantiate(obj, pos, Quaternion.identity);
     }

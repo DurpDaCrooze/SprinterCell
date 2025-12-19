@@ -12,11 +12,6 @@ public class EntityPathFollow : MonoBehaviour
     void Start()
     {
         speed = Math.Abs(GetComponent<GeneralEntityMovement>().speed);
-        
-        foreach (Transform points in pathPoints)
-        {
-            print("Pos: " + points.position);
-        }
     }
 
     // Update is called once per frame
@@ -28,15 +23,16 @@ public class EntityPathFollow : MonoBehaviour
             if(targetPoint < (pathPoints.Length -1)) targetPoint++;
         }
 
-        bool isRight = transform.position.x < pathPoints[targetPoint].position.x;
+        bool isRight = transform.position.x < pathPoints[targetPoint].position.x; //store wether obj is right or not via bool
 
+        //movement logic (crude but it works)
         if (isRight)
         {
-            moveDir = 1;
+            moveDir = 1; //shift right if object is on the right
         }
         else
         {
-            moveDir = -1;
+            moveDir = -1; //else move left
         }
 
         
