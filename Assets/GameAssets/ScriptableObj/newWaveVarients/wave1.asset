@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d18439fa7f654ba883be19e5adf4b62, type: 3}
   m_Name: wave1
   m_EditorClassIdentifier: Assembly-CSharp::newWave
-  obstaclePrefab: {fileID: 8058476580583013329, guid: e1466ae718c7f4d708ac273cc0245c01, type: 3}
+  obstaclePrefab: {fileID: 3658429296935120982, guid: bf9610ffbbdb449a28fa668055e5cfcb, type: 3}
   movementSpeed: 6
-  damageValue: 5
+  damageValue: 2
   numberOfObstacles: 4
-  canEnemyShoot: 1
+  canEnemyShoot: 0
   spawnInterval: 3

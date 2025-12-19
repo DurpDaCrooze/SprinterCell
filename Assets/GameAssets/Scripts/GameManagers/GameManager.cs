@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
             Transform[] pathArray = getRandomPathPoints().ToArray();
             
             //get instance refs :>
-            GameObject obstacle = Instantiate(wave.obstaclePrefab, pathArray[0].position, Quaternion.identity);
+            GameObject obstacle = Instantiate(wave.obstaclePrefab, new Vector3(pathArray[0].position.x,pathArray[0].position.y, -0.1f), Quaternion.identity); //create obstacle line
             DamageDealer damageDealer = obstacle.GetComponent<DamageDealer>();
             GeneralEntityMovement generalEntityMovement = obstacle.GetComponent<GeneralEntityMovement>();
             EntityPathFollow entityPathFollow = obstacle.GetComponent<EntityPathFollow>();
