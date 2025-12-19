@@ -70,11 +70,13 @@ public class GameManager : MonoBehaviour
             DamageDealer damageDealer = obstacle.GetComponent<DamageDealer>();
             GeneralEntityMovement generalEntityMovement = obstacle.GetComponent<GeneralEntityMovement>();
             EntityPathFollow entityPathFollow = obstacle.GetComponent<EntityPathFollow>();
+            EntityShoot entityShoot = obstacle.GetComponent<EntityShoot>();
             
             //set wave data
             damageDealer.damageHandout = wave.damageValue;
             generalEntityMovement.speed = wave.movementSpeed;
             entityPathFollow.pathPoints = pathArray;
+            entityShoot.canShoot = wave.canEnemyShoot;
             
             yield return new WaitForSeconds(wave.spawnInterval);
         }

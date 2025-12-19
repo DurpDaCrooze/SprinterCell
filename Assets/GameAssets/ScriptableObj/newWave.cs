@@ -7,5 +7,6 @@ public class newWave : ScriptableObject
     public float movementSpeed;
     public int damageValue;
     public int numberOfObstacles;
+    public bool canEnemyShoot;
     public float spawnInterval; 
 }
