@@ -6,9 +6,14 @@ public class CharacterController : MonoBehaviour
     //public vars
     public float moveSpeed;
     public float accelerationSpeed;
+    public float edgePadding;
+
+    //objects
     
     //private vars
     private float moveVal = 0;
+    private float minCap = 0;
+    private float maxCap = 0;
 
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -16,30 +21,33 @@ public class CharacterController : MonoBehaviour
     {
         
     }
+    
+    void Awake()
+    {
+        initEdgePadding();
+    }
 
+    private void initEdgePadding()
+    {
+        //Computing the edge padding here so that the arithmetic op doesn't run per frame :p
+        minCap = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + edgePadding;
+        maxCap = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - edgePadding;
+    }
+    
     // Update is called once per frame
     void Update()
     {
-        int movementDirection = getInput();
-        float moveVector = calculateMovement(movementDirection);
+        float moveVector = calculateMovement(Input.GetAxisRaw( "Horizontal"));
         applyMovement(moveVector);
+        clampMovementAtEdges();
     }
 
-    int getInput()
+    void clampMovementAtEdges()
     {
-        if (Input.GetKey(KeyCode.D))
-        {
-            return 1;
-        } 
-        if (Input.GetKey(KeyCode.A))
-        {
-            return -1;
-        }
-
-        return 0;
+        transform.position = new Vector2(Mathf.Clamp(transform.position.x, minCap, maxCap), transform.position.y);
     }
-
-    float calculateMovement(int direction)
+    
+    float calculateMovement(float direction)
     {
         if (direction != 0)
         {
