@@ -11,18 +11,13 @@ public class GeneralEntityMovement : MonoBehaviour
     private GameManager gameManager;
     private Camera camera;
     private float outofboundsy;
-
-    private void Awake()
-    {
-        //set speed to negative
-        if (speed > 0) speed = -speed;
-
-    }
-
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         initVars();
+        //set speed to negative
+        if (speed > 0) speed = -speed;
     }
 
     void initVars()
