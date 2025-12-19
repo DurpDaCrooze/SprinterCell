@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     private float moveVal = 0;
     private float minCap = 0;
     private float maxCap = 0;
-
+    [SerializeField] private statsTracker stats;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,6 +41,21 @@ public class PlayerController : MonoBehaviour
         float moveVector = calculateMovement(Input.GetAxisRaw( "Horizontal"));
         applyMovement(moveVector);
         clampMovementAtEdges();
+        checkHealth();
+    }
+
+    void checkHealth()
+    {
+        //this usually wouldnt go here but I really dont have time im so sorry.
+        if (playerHealth <= 0) //check health
+        {
+            if (stats.currentScore > stats.highScore) //update high sciore
+            {
+                stats.highScore = stats.currentScore;
+            }
+            stats.currentScore = 0; //reset current score
+        }
+        GetComponent<sceneSwitcher>().switchToScene("Menu");
     }
 
     //clamp movement at edges for edge limits

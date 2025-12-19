@@ -4,8 +4,8 @@ public class BackgroundScrollScript : MonoBehaviour
 {
     //public vars
     public float scrollSpeed = -5;
-    [SerializeField] private Vector2 backgroundStartPos;
-    [SerializeField] private Vector2 backgroundEndPos;
+    [SerializeField] private Vector3 backgroundStartPos;
+    [SerializeField] private Vector3 backgroundEndPos;
     
     //objects
     public GameObject background;

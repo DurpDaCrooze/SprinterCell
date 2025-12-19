@@ -275,7 +275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8326497808333593334, guid: c9205583895a44158ad153d605ede1fe, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8326497808333593334, guid: c9205583895a44158ad153d605ede1fe, type: 3}
       propertyPath: m_LocalRotation.w
@@ -529,15 +529,15 @@ MonoBehaviour:
   pgSpawnTimeRange:
   - 2
   - 6
-  infiniteSpawnPointGivers: 0
+  infiniteSpawnPointGivers: 1
   pgSpawnCount: 10
   isTutorialLevel: 1
   pointGiverPrefab: {fileID: 3728477084571061714, guid: 33a2ce38b6cf34b688865a47b44d6194, type: 3}
   allWaves:
-  - {fileID: 11400000, guid: d2666cf1c7a25455cb8d944685bfa68c, type: 2}
-  - {fileID: 11400000, guid: c1bf8dbb340dc4bd9b81c20c67832ce8, type: 2}
-  - {fileID: 11400000, guid: 7543aabbd346748f8a7be9902d3235f0, type: 2}
-  - {fileID: 11400000, guid: 4a67a21cece0c455f9bb242a096a3032, type: 2}
+  - {fileID: 11400000, guid: eca6316190e3f4f69ac71a6ca5267e85, type: 2}
+  - {fileID: 11400000, guid: ecc5ceb484c6140d28c143577b4afcf2, type: 2}
+  - {fileID: 11400000, guid: e8dbe1cb293a040a9907f0642b8618a6, type: 2}
+  - {fileID: 11400000, guid: 07fa6c6285f7f4c098fb94752a3b5ddc, type: 2}
   paths:
   - {fileID: 62090795}
   - {fileID: 1866305195}
@@ -587,8 +587,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BackgroundScrollScript
   scrollSpeed: -0.8
-  backgroundStartPos: {x: 0, y: 29.5}
-  backgroundEndPos: {x: 0, y: -5}
+  backgroundStartPos: {x: 0, y: 29.5, z: 1}
+  backgroundEndPos: {x: 0, y: -5, z: 1}
   background: {fileID: 8109597838589463307, guid: c9205583895a44158ad153d605ede1fe, type: 3}
   background1: {fileID: 914140271}
   background2: {fileID: 1964546038}
@@ -618,7 +618,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8326497808333593334, guid: c9205583895a44158ad153d605ede1fe, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8326497808333593334, guid: c9205583895a44158ad153d605ede1fe, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1664,7 +1664,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2750061794029371494, guid: 094b2dc90ee75406fb0004da6e618bce, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 2750061794029371494, guid: 094b2dc90ee75406fb0004da6e618bce, type: 3}
       propertyPath: m_LocalRotation.w

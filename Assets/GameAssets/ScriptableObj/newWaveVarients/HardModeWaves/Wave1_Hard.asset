@@ -16,5 +16,5 @@ MonoBehaviour:
   movementSpeed: 2
   damageValue: 2
   numberOfObstacles: 4
-  canEnemyShoot: 0
+  canEnemyShoot: 1
   spawnInterval: 3

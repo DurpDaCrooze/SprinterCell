@@ -275,7 +275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8326497808333593334, guid: c9205583895a44158ad153d605ede1fe, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8326497808333593334, guid: c9205583895a44158ad153d605ede1fe, type: 3}
       propertyPath: m_LocalRotation.w
@@ -587,8 +587,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BackgroundScrollScript
   scrollSpeed: -0.8
-  backgroundStartPos: {x: 0, y: 29.5}
-  backgroundEndPos: {x: 0, y: -5}
+  backgroundStartPos: {x: 0, y: 29.5, z: 1}
+  backgroundEndPos: {x: 0, y: -5, z: 1}
   background: {fileID: 8109597838589463307, guid: c9205583895a44158ad153d605ede1fe, type: 3}
   background1: {fileID: 914140271}
   background2: {fileID: 1964546038}
@@ -618,7 +618,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8326497808333593334, guid: c9205583895a44158ad153d605ede1fe, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8326497808333593334, guid: c9205583895a44158ad153d605ede1fe, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1664,7 +1664,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2750061794029371494, guid: 094b2dc90ee75406fb0004da6e618bce, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2750061794029371494, guid: 094b2dc90ee75406fb0004da6e618bce, type: 3}
       propertyPath: m_LocalRotation.w
