@@ -352,7 +352,7 @@ GameObject:
   - component: {fileID: 2046123491}
   - component: {fileID: 2046123490}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -372,7 +372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterController
   moveSpeed: 10
   accelerationSpeed: 0.3
-  mainCamera: {fileID: 519420031}
+  edgePadding: 0.3
 --- !u!212 &2046123491
 SpriteRenderer:
   serializedVersion: 2

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class CharacterController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     //public vars
     public float moveSpeed;
