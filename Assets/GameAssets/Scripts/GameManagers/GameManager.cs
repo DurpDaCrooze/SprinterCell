@@ -10,12 +10,12 @@ public class GameManager : MonoBehaviour
     
     //general adjustments
     public float timesScale = 1f; //using this for testing and possibly for features, can slow down time ykyk (public purely for testing)
-    public int score = 0;
     public int wave = 0;
     
     //Spawn Adjustments
     public float[] pgSpawnTimeRange = {3,7}; //point giver spawn time range
     public int pgSpawnCount;
+    public bool isTutorialLevel = false;
     
     //object references
     public GameObject pointGiverPrefab;
@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
             EntityPathFollow entityPathFollow = obstacle.GetComponent<EntityPathFollow>();
             EntityShoot entityShoot = obstacle.GetComponent<EntityShoot>();
             
-            //set wave data
+            //apply wave data to entities/obstacles
             damageDealer.damageHandout = wave.damageValue;
             generalEntityMovement.speed = wave.movementSpeed;
             entityPathFollow.pathPoints = pathArray;
@@ -108,13 +108,15 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < pgSpawnCount; i++)
         {
             yield return new WaitForSeconds(Random.Range(pgSpawnTimeRange[0], pgSpawnTimeRange[1]));
-            spawnObject(pointGiverPrefab, pointGiverSpawnerPos.position);
+            GameObject pointGiver = Instantiate(pointGiverPrefab, pointGiverSpawnerPos.position, Quaternion.identity);
 
+
+            if (isTutorialLevel && i == 9)
+            {
+                pointGiver.GetComponent<PointGiver>().endLevelOnDestroy = true;
+            }
+            
         }
     }
-
-    void spawnObject(GameObject obj, Vector2 pos) //this is redundant, was going to add type safety for instantiations until I found out they natively return the object, but it's in my code now so it'll stay
-    {
-        Instantiate(obj, pos, Quaternion.identity);
-    }
+    
 }

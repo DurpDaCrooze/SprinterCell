@@ -10,12 +10,12 @@ public class hudScript : MonoBehaviour
 
     private GameObject player;
     private CharacterController playerController;
-    private GameManager gameManager;
+    [SerializeField] private statsTracker stats;
+
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        gameManager = GetComponent<GameManager>(); //linking GameManager instance in the same gameobj so I just threw getcomponent
         
         //linking player istance
         player = GameObject.FindGameObjectWithTag("Player");
@@ -24,7 +24,7 @@ public class hudScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = ("Points: " + gameManager.score);
+        scoreText.text = ("Points: " + stats.currentScore);
         healthText.text = ("Health: " + player.GetComponent<PlayerController>().playerHealth);
     }
 }

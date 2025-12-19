@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PointGiver
   pointHandout: 5
+  stats: {fileID: 11400000, guid: f4afa026dc6e3464984923eb7ff8037c, type: 2}
 --- !u!50 &5955757049444121453
 Rigidbody2D:
   serializedVersion: 5
