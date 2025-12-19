@@ -87,6 +87,8 @@ public class GameManager : MonoBehaviour
         
         GameObject path = paths[Random.Range(0, paths.Length)];
         
+        print("Chose path: " + path.name);
+        
         pointList.Add(path.transform);
         foreach (Transform point in path.transform)
         {
