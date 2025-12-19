@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     //objects
     
     //private vars
+    private GameManager gameManager;
     private float moveVal = 0;
     private float minCap = 0;
     private float maxCap = 0;
@@ -19,7 +20,7 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        gameManager = FindObjectOfType<GameManager>();
     }
     
     void Awake()
@@ -54,8 +55,8 @@ public class PlayerController : MonoBehaviour
                 stats.highScore = stats.currentScore;
             }
             stats.currentScore = 0; //reset current score
+            gameManager.GetComponent<sceneSwitcher>().switchToScene("LoseScene");
         }
-        GetComponent<sceneSwitcher>().switchToScene("Menu");
     }
 
     //clamp movement at edges for edge limits
