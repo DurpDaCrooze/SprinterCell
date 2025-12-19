@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     
     //Spawn Adjustments
     public float[] pgSpawnTimeRange = {3,7}; //point giver spawn time range
+    public bool infiniteSpawnPointGivers = false;
     public int pgSpawnCount;
     public bool isTutorialLevel = false;
     
@@ -107,11 +108,12 @@ public class GameManager : MonoBehaviour
         //Iterate through spawn count to produce 10 as it says in the front sheet :o
         for (int i = 0; i < pgSpawnCount; i++)
         {
+            if (infiniteSpawnPointGivers) i = 0;
             yield return new WaitForSeconds(Random.Range(pgSpawnTimeRange[0], pgSpawnTimeRange[1]));
             GameObject pointGiver = Instantiate(pointGiverPrefab, pointGiverSpawnerPos.position, Quaternion.identity);
 
 
-            if (isTutorialLevel && i == 9)
+            if (isTutorialLevel && i == 9) //this is now technically redundant thanks to the atrocity of a line 111, how fitting. I'll leave it here so you know what I was trying to do earlier on either way.
             {
                 pointGiver.GetComponent<PointGiver>().endLevelOnDestroy = true;
             }
